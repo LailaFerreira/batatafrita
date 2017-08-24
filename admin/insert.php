@@ -1,3 +1,4 @@
+<?php include_once 'connect.php';?>
 <?php
 
 $user  = $_POST['user'];
@@ -10,9 +11,7 @@ if ($regra === $chave) {
     if ($user != NULL && $email != NULL && $senha != NULL) {
 
         $today = md5(date("d m y G:i:s T Y"));
-        $con = mysql_connect("localhost", "root", "");
-        mysql_select_db("batatafrita");
-    
+            
         $insert = mysql_query("INSERT INTO `login`(`us_id`, `nome`, `email`, `pass`, `chave`)VALUES (NULL, '" .$user. "', '" .$email. "', '" . md5($senha) . "', '" . $today . "')",$con)or die(mysql_error());
         mysql_insert_id();
         

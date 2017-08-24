@@ -1,13 +1,8 @@
+<?php include_once 'connect.php';?>
 <?php
 
 error_reporting (E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 
-
-$localhost = "localhost";
-$userbd = "root";
-$password = "";
-$con = @mysql_connect($localhost, $userbd, $password);
-mysql_select_db("batatafrita");
 
 $user = $_POST['user'];
 $senha = md5($_POST['pass']);

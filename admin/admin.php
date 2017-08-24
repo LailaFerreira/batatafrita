@@ -1,14 +1,10 @@
+<?php include_once 'connect.php';?>
 <?php
 
 error_reporting (E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 
 session_start();
 
-$localhost = "localhost";
-$userbd = "root";
-$password = "";
-$con = @mysql_connect($localhost, $userbd, $password);
-mysql_select_db("batatafrita");
 
 if (isset($_SESSION['nome_usuario'])) {
     $nome_usuario = $_SESSION['nome_usuario'];
@@ -72,7 +68,7 @@ if (!(empty($nome_usuario)OR empty($senha_usuario))) {
         <input type="hidden" name="gerarchave" value="<?php echo $regra; ?>"><br>
         <button type="submit">Cadastrar</button>
         </form>
-        
+
         <?php
             echo "<a href=\"sair.php\">Sair</a>";
         ?>
