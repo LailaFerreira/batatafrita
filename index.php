@@ -1,5 +1,13 @@
+<?php include './admin/connect.php';?>
+<?php 
+  $query = ('SELECT * FROM config');
+  $return = mysql_query($query, $con);
+  $row = mysql_fetch_array($return);
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
   <head>
 
@@ -8,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
+    <title><?php echo $row['conf_title']; ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -22,7 +30,7 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
 
   </head>
 
@@ -31,35 +39,32 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><?php echo $row['conf_title']; ?></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+              <a class="nav-link js-scroll-trigger" href="#about"><?php echo $row['conf_menu1']; ?></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+              <a class="nav-link js-scroll-trigger" href="#portfolio"><?php echo utf8_encode($row['conf_menu2']); ?></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="#contact"><?php echo $row['conf_menu3']; ?></a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <header class="masthead">
+    <header class="masthead" style="background: url(./img/<?php echo $row['conf_background']; ?>) 100% 100% no-repeat">
       <div class="header-content">
         <div class="header-content-inner">
-          <h1 id="homeHeading">Your Favorite Source of Free Bootstrap Themes</h1>
+          <h1 id="homeHeading"><?php echo $row['conf_hello']; ?></h1>
           <hr>
-          <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+          <p><?php echo $row['conf_desc']; ?></p>
           <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
         </div>
       </div>
@@ -71,7 +76,7 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading text-white">We've got what you need!</h2>
             <hr class="light">
-            <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+            <p class="text-faded"><?php echo $row['conf_title']; ?> has everything you need to get your new website up and running in no time! All of the templates and themes on <?php echo $row['conf_title']; ?> are open source, free to download, and easy to use. No strings attached!</p>
             <a class="btn btn-default btn-xl js-scroll-trigger" href="#services">Get Started!</a>
           </div>
         </div>
@@ -220,7 +225,7 @@
 
     <div class="call-to-action bg-dark">
       <div class="container text-center">
-        <h2>Free Download at Start Bootstrap!</h2>
+        <h2>Free Download at <?php echo $row['conf_title']; ?>!</h2>
         <a class="btn btn-default btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Download Now!</a>
       </div>
     </div>

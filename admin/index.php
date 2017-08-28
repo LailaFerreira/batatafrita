@@ -31,6 +31,9 @@
             </div>
             <div class="form-group">
               <button class="btn btn-primary btn-lg btn-block">Entrar</button>
+              <div>
+                <a href="../index.php">Retornar ao site</a>
+              </div>
             </div>
           </form>
       </div>

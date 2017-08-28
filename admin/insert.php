@@ -25,3 +25,4 @@ if ($regra === $chave) {
 } else {
     echo "<script>if(window.confirm('Campo Validador incorreto! \\ Tente novamente!')) { window.location='admin.php';} else { window.close () } </script>";
 }
+?>
