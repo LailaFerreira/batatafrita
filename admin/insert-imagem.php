@@ -12,11 +12,11 @@ $link  = $_POST['img_link'];
         
         if (!file_exists($_FILES['arquivo']['name'])) {		
 			
-			$pt_file =  'img/portfolio/fullsize/'.$_FILES['arquivo']['name'];
+			$pt_file =  'img/portfolio/fullsize'.$_FILES['arquivo']['name'];
 			
-			if ($pt_file != 'img/portfolio/fullsize/'){	
+			if ($pt_file != 'img/portfolio/fullsize'){	
 				
-				$destino =  '../img/portfolio/fullsize/'.$_FILES['arquivo']['name'];				
+				$destino =  '../img/portfolio/fullsize'.$_FILES['arquivo']['name'];				
 				$arquivo_tmp = $_FILES['arquivo']['tmp_name'];
 				move_uploaded_file($arquivo_tmp, $destino);
 				chmod ($destino, 0644);	

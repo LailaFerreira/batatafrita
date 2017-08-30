@@ -147,15 +147,15 @@
                 echo '
 
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-              <img class="img-fluid" src="'.$portfolio['img_arquivo'].'" alt="" width="650px" height="350px">
+            <a class="portfolio-box" href="'.$portfolio['img_arquivo'].'">
+              <img class="img-fluid" src="'.$portfolio['img_arquivo'].'">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    '.$portfolio['img_title'].'
                   </div>
                   <div class="project-name">
-                    Project Name
+                   
                   </div>
                 </div>
               </div>

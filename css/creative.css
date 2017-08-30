@@ -74,6 +74,11 @@ img::-moz-selection {
   color: white;
   background: transparent; }
 
+.img-fluid {
+  width: 650px;
+  height: 350px;
+}
+
 body {
   -webkit-tap-highlight-color: #222222; }
 
