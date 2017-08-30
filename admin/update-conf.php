@@ -1,8 +1,10 @@
 <?php include_once 'connect.php'; ?>
+<?php include_once 'user_auth.php';?>
+
 <?php
 
 $conf_id = $_POST['conf_id'];
-$title  = $_POST['conf_title'];
+$title  = $_POST['conf_title']; 
 $menu1 = $_POST['conf_menu1'];
 $menu2 = $_POST['conf_menu2'];
 $menu3 = $_POST['conf_menu3'];
@@ -12,21 +14,23 @@ $desc = $_POST['conf_desc'];
 if ($title != NULL && $menu1 != NULL ) {
 
 
- if (!file_exists($_FILES['arquivo']['name'])) {        
+ if (!file_exists($_FILES['arquivo']['name'])) {   
+      
+      $pt_file =  'img/'.$_FILES['arquivo']['name'];
+      
+      if ($pt_file != 'img/'){  
         
-        $pt_file =  'posts/'.$_FILES['arquivo']['name'];
+        $destino =  '../img/'.$_FILES['arquivo']['name'];       
+        $arquivo_tmp = $_FILES['arquivo']['tmp_name'];
+        move_uploaded_file($arquivo_tmp, $destino);
+        chmod ($destino, 0644); 
         
-        if ($pt_file != 'posts/'){  
-            
-            $destino =  '../posts/'.$_FILES['arquivo']['name'];             
-            $arquivo_tmp = $_FILES['arquivo']['tmp_name'];
-            move_uploaded_file($arquivo_tmp, $destino);
-            chmod ($destino, 0644); 
-            
-        }elseif($_POST['valor'] != NULL){
-            $pt_file = $_POST['valor']; 
-            }
+      }elseif($_POST['valor'] != NULL){
+        
+        $pt_file = $_POST['valor']; 
+      
         }
+      }
     
 
     $today = md5(date("d m y G:i:s T Y"));

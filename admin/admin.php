@@ -39,7 +39,8 @@
                  echo "<a href=\"cadastro.php\">Cadastrar usuarios</a><br>";
                  echo "<a href=\"config.php\">Cadastrar informações tela inicial</a><br>";
                  echo "<a href=\"config-atualiza.php\">Atualizar informações tela inicial</a><br>";
-                 echo "<a href=\"cadastro-imagem.php\">Cadastro de imagens para portifolio</a>";
+                 echo "<a href=\"cadastro-imagem.php\">Cadastro de imagens para portifolio</a><br>";
+                 echo "<a href=\"lista-imagem.php\">Atualização de imagem do portifolio</a>";
               ?>
             </li>
         </ul>
