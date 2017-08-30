@@ -21,6 +21,7 @@
         <div class="container">
             <a class="navbar-brand" href="#page-top" style="margin-left: -108px;">Administrador</a>
             <a class="navbar-brand" href="admin.php">Início</a>
+            <a class="navbar-brand" href="../index.php">Ir para site</a>
         </div>
    
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -36,7 +37,9 @@
             <li class="page-scroll" style="list-style-type:none; margin: 5px 0px 0px 15px;">
               <?php
                  echo "<a href=\"cadastro.php\">Cadastrar usuarios</a><br>";
-                 echo "<a href=\"config.php\">Configurar informações tela inicial</a>";
+                 echo "<a href=\"config.php\">Cadastrar informações tela inicial</a><br>";
+                 echo "<a href=\"config-atualiza.php\">Atualizar informações tela inicial</a><br>";
+                 echo "<a href=\"cadastro-imagem.php\">Cadastro de imagens para portifolio</a>";
               ?>
             </li>
         </ul>

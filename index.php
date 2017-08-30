@@ -5,7 +5,17 @@
   $row = mysql_fetch_array($return);
 
 ?>
+<?php 
+     $query1 = ('SELECT * FROM portfolio');
+    
+    $result1 = mysql_query($query1, $con);
+    
+    $portfolio = array();
+    while($portfolio = mysql_fetch_array($result1)){
+        $portfolios[] = $portfolio;
+    }
 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -49,7 +59,7 @@
               <a class="nav-link js-scroll-trigger" href="#about"><?php echo $row['conf_menu1']; ?></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio"><?php echo utf8_encode($row['conf_menu2']); ?></a>
+              <a class="nav-link js-scroll-trigger" href="#portfolio"><?php echo $row['conf_menu2']; ?></a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact"><?php echo $row['conf_menu3']; ?></a>
@@ -127,11 +137,18 @@
     </section>
 
     <section class="p-0" id="portfolio">
-      <div class="container-fluid">
-        <div class="row no-gutter popup-gallery">
+        <div class="container-fluid">
+                <div class="row no-gutter popup-gallery">
+
+          <?php 
+        
+        
+          foreach ($portfolios as $portfolio) {
+                echo '
+
           <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+              <img class="img-fluid" src="'.$portfolio['img_arquivo'].'" alt="" width="650px" height="350px">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -144,6 +161,13 @@
               </div>
             </a>
           </div>
+
+                ';
+              }
+               
+           ?>   
+
+          
           <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
               <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">

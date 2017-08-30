@@ -1,17 +1,21 @@
 <?php include_once 'connect.php';?>
 <?php include_once 'user_auth.php';?>
-
+<?php
+    $query = ('SELECT * FROM config ');
+    
+    $result = mysql_query($query, $con);
+    
+    $row = mysql_fetch_array($result);
+    
+?>
 <html lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
-        <title>Edição de informações da tela principal</title>
+        <title>Cadastro de imagens</title>
         <meta name="generator" content="Bootply" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <!--[if lt IE 9]>
-            <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
         <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
@@ -34,23 +38,15 @@
     </div>
 <div class="container">
         <div class="row well col-lg-4">
-        <form class="form col-md-12 center-block" enctype="multipart/form-data" action="insert-conf.php" method="POST">
+        <form class="form col-md-12 center-block" enctype="multipart/form-data" action="insert-imagem.php" method="POST">
                
-                 <input type="text" name="conf_title" class="form-control" placeholder="Nome site">
+                 <input type="text" name="img_title" class="form-control" placeholder="Título imagem">
         	<br/>
-                 <input type="text" name="conf_menu1" class="form-control" placeholder="Item de menu 1">
+                 <input type="text" name="img_link" class="form-control" placeholder="Link">
        		<br/>
-                 <input type="text" name="conf_menu2" class="form-control" placeholder="Item de menu 2">
+             	 <input type="file" name="arquivo" class="form-control" placeholder="Ibagem">
         	<br/>
-                 <input type="text" name="conf_menu3" class="form-control" placeholder="Item de menu 3">
-        	<br/>
-              	 <input type="text" name="conf_hello" class="form-control" placeholder="Frase inicial">
-        	<br/>
-             	 <input type="text" name="conf_desc" class="form-control" placeholder="Frase descrição">
-        	<br/>
-             	 <input type="file" name="arquivo" class="form-control" placeholder="Caminho da imagem">
-        	<br/>
-
+                
                 <button class="btn btn-primary" type="submit">Cadastrar</button>            
             </form>
         </div>

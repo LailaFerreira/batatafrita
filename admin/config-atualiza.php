@@ -1,11 +1,18 @@
 <?php include_once 'connect.php';?>
 <?php include_once 'user_auth.php';?>
-
+<?php
+    $query = ('SELECT * FROM config ');
+    
+    $result = mysql_query($query, $con);
+    
+    $row = mysql_fetch_array($result);
+    
+?>
 <html lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
-        <title>Edição de informações da tela principal</title>
+        <title>Cadastro de informações da tela principal</title>
         <meta name="generator" content="Bootply" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -34,24 +41,27 @@
     </div>
 <div class="container">
         <div class="row well col-lg-4">
-        <form class="form col-md-12 center-block" enctype="multipart/form-data" action="insert-conf.php" method="POST">
+        <form class="form col-md-12 center-block" enctype="multipart/form-data" action="update-conf.php" method="POST">
                
-                 <input type="text" name="conf_title" class="form-control" placeholder="Nome site">
+                 <input type="text" name="conf_title" class="form-control" value="<?php echo $row['conf_title']; ?>">
         	<br/>
-                 <input type="text" name="conf_menu1" class="form-control" placeholder="Item de menu 1">
+                 <input type="text" name="conf_menu1" class="form-control" value="<?php echo $row['conf_menu1']; ?>">
        		<br/>
-                 <input type="text" name="conf_menu2" class="form-control" placeholder="Item de menu 2">
+                 <input type="text" name="conf_menu2" class="form-control" value="<?php echo $row['conf_menu2']; ?>">
         	<br/>
-                 <input type="text" name="conf_menu3" class="form-control" placeholder="Item de menu 3">
+                 <input type="text" name="conf_menu3" class="form-control" value="<?php echo $row['conf_menu3']; ?>">
         	<br/>
-              	 <input type="text" name="conf_hello" class="form-control" placeholder="Frase inicial">
+              	 <input type="text" name="conf_hello" class="form-control" value="<?php echo $row['conf_hello']; ?>">
         	<br/>
-             	 <input type="text" name="conf_desc" class="form-control" placeholder="Frase descrição">
+                 <input type="text" name="conf_desc" class="form-control" value="<?php echo $row['conf_desc']; ?>">
         	<br/>
-             	 <input type="file" name="arquivo" class="form-control" placeholder="Caminho da imagem">
+             	 <input type="file" name="arquivo" class="form-control" placeholder="<?php echo $row['conf_background']; ?>">
         	<br/>
+                 <input type="hidden" name="valor" class="form-control" value="<?php echo $row['conf_background']; ?>">
+                 <input type="hidden" name="conf_id" class="form-control" value="<?php echo $row['conf_id']; ?>">
 
-                <button class="btn btn-primary" type="submit">Cadastrar</button>            
+
+                <button class="btn btn-primary" type="submit">Atualizar</button>            
             </form>
         </div>
             </div>
