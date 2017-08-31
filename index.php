@@ -30,6 +30,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -90,7 +91,7 @@
             <a class="btn btn-default btn-xl js-scroll-trigger" href="#services">Get Started!</a>
           </div>
         </div>
-      </div>
+      </div> 
     </section>
 
     <section id="services">
@@ -180,28 +181,283 @@
     </div>
 
     <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
-            <hr class="primary">
-            <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+     
+
+  <style>
+    #partners{
+    background-color: #ffffff;
+      padding-bottom: 80px;
+      width: 100%;
+      text-align: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    background: url(./img/mao-contact-bg.jpg) no-repeat 50% 50% fixed;
+  }
+  
+  .partners-container{
+    margin-bottom: 80px;
+    margin-top: 80px; }
+
+  .partners-header{
+    font-size: 35px;
+    color: black;
+    text-transform: uppercase; 
+    margin-top: 50px;
+    margin-bottom:50px; 
+  }
+
+  .partners-desc{
+    font-size: 25px;
+    color: #696969;
+  }
+  
+  .partners-icon{
+    font-size: 35px;
+      background-color: #00aae6;
+      height: 40px;
+      width: 41px;
+      margin: 0 auto;
+      border-radius: 50%;
+
+  }
+  #contact-header{
+    width: 100%;
+    background: url('./img/contact-background.jpg') no-repeat center center;
+    margin-bottom: 100px;
+    color: #fff;
+    height: 206px;
+      background-size: cover;
+
+  }
+
+  .contact-info{
+    float: left;
+    width: 33%;
+    margin-left: 15%;
+    margin-bottom: 150px;
+  }
+
+  .contact-form {
+    float: right;
+    width: 33%;
+    margin-right: 15%;
+
+  }
+
+  .contact-form textarea,
+  .contact-form input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  .contact-form textarea{
+    height: 102px;
+    resize: none;
+  }
+
+  .contact-row h4{
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+    width: 140px;
+    line-height: 30px;
+
+  } 
+
+  .contact-row > span{
+    float: left;
+    display: block;
+    margin-left: 20px;
+    line-height: 19px;
+
+  }
+
+  .contact-row{
+    margin-bottom: 20px;
+  }
+
+  .contact-row .label{
+    float: left;
+    line-height: 25px;
+    height: 25px;
+
+  }
+   
+  .contact-row .icon{
+    font-size: 25px;
+    font-family: 'ionicons';
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    color: #f28500;
+    float: left;
+    margin-right: 10px;
+  }
+  
+  .contact-form .btn{
+    margin-top: 20px;
+  }
+
+  .contact-form #returnMessage{
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: all .3s ease 0s;
+    margin-top: 20px;
+  }
+
+  .contact-form #returnMessage.active{
+    opacity: 1;
+  }
+
+.footer {
+    background: url(./img/footer-bck.jpg) repeat;
+    width: 100%;
+    height: 200px;
+
+  }
+
+  .footer img{
+    margin-top: 20px;
+    margin: 0 auto;
+    
+  }
+  .info-footer{
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    color: #ddd;
+    line-height: 30px;
+  }
+  
+  .icon-social{
+    font-size: 26px;
+    color: #fff;
+    height: 40px;
+    width: 41px;
+    margin-top: 70px;
+    margin-left: 1px;
+    border-radius: 50%;
+    background: #cacaca;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    float: left;
+    transition: all .3s ease 0s;
+
+  }
+  
+  #icon-social{
+    width: 359px;
+  }
+  
+  #icon-facebook:hover{
+  background-color: #3b5998;
+
+  }
+
+  #icon-instagram:hover{
+  background-color: #ffc838;
+
+  }
+
+  #icon-twitter:hover{
+  background-color: #1dcaff;
+  }
+
+  #icon-youtube:hover{
+  background-color: #cd201f;
+  }
+
+  .manda-msg {
+  width: 100%;
+  text-align: center;
+  font-size: 35px;
+  text-transform: uppercase;
+  padding: 80px 0 40px 0;
+  box-sizing: border-box;
+}
+
+  </style>
+
+
+  <section id="partners" style="margin-top: -99px !important;">
+        <div class="partners-container">
+        <div class="partners-icon fa fa-camera-retro"></div>
+        <p class="partners-header">DAEUDHAEDHAE</p>
+        <div>
+        <p class="partners-desc">Olha só, <a href="https://wordpress.org/plugins/any-ipsum/">aqui</a> você pode fazer um gerador de texto personalizado.</p>
+        <p class ="partners-desc">Faz um e manda pra gente (ou não rsrs) </p>
+        </div>
+        </div>
+      </section>
+
+
+      <!-- SECTION CONTACT -->
+
+   <section id="contact" style="margin-top: -99px !important; margin-bottom: 9%;" >
+       <div id="contact-header">
+          <h2 class="manda-msg">Manda uma mensagem pra gente!</h2>
+        </div>
+        <div class="contact-info">
+          
+          <br/>
+          <div class="contact-row">
+            <h3>
+              <span class="fa fa-envelope"></span>
+              lorem@ipsum.com
+              <br/>
+            </h3>
+          </div>
+          <br/>
+          <div class="contact-row">
+            <h3>
+              <span class="fa fa-mobile"></span>
+              (32) 9999-9999
+              <br/>
+            </h3>
+           
+          </div>
+          <br/>
+          <div id="icon-social">
+            <a href="#"><div class="icon-social fa fa-facebook" id="icon-facebook"></div></a>
+            <a href="#"><div class="icon-social fa fa-instagram" id="icon-instagram"></div></a>
+            <a href="#"><div class="icon-social fa fa-500px" id="icon-twitter"></div></a>
+            <a href="#"><div class="icon-social fa fa-linkedin" id="icon-youtube"></div></a>
+            <a href="#"><div class="icon-social fa fa-github-alt" id="icon-youtube"></div></a>
+          </div>
+          
+        </div>
+        <div class="contact-form">
+          <form action="message.php" name="form_contato" method="post" >
+            <input type="text" placeholder="Nome" id="input-name"/>
+            <input type="text" id="input-email" placeholder="Email"/>
+            <textarea id="input-message" cols="30" placeholder="Mensagem"></textarea>
+            <button class="btn btn-primary btn-xl" style="margin-left: 143px; width: 174px;">Enviar</button>
+            <div id="returnMessage">&nbsp;</div>
+            <br/>
+          </form>
+        </div>
+        <br/>
+      </section>
+
+      <!-- SECTION FOOTER -->
+      <section id="footer">
+        <div class="footer" style="margin-bottom: -200px">
+          <img src="./img/logo-footer.png" alt="Logo Lipsum">
+          <div class="info-footer">
+          <label for="footer"> Copyright © 2017 | <a href="https://github.com/LailaFerreira">Laila Ferreira Opressora</a></label>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fa fa-phone fa-3x sr-contact"></i>
-            <p>123-456-6789</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-            <p>
-              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -214,7 +470,8 @@
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/creative.min.js"></script>
+    <script src="js/creative.js"></script>
+    <script src="js/contact-form.js"></script>
 
   </body>
 
