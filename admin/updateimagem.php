@@ -34,6 +34,7 @@ and open the template in the editor.
         <div class="container">
             <a class="navbar-brand" style="margin-left: -108px;">Administrador</a>
             <a class="navbar-brand" href="admin.php">Início</a>
+            <a class="navbar-brand" href="../index.php">Ir para site</a>
         </div>
    
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

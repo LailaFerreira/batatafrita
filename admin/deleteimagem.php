@@ -2,15 +2,11 @@
 <?php include_once 'user_auth.php';?>
 
 <?php
-    $id = $_GET['id'];
-	
-    $query = ('SELECT * FROM portfolio');
+    $query = ("SELECT * FROM portfolio");
     
     $result = mysql_query($query, $con);
-    $row = array();
-    while($row = mysql_fetch_array($result)){
-    	$rows[] = $row;
-    }
+    
+    $row = mysql_fetch_array($result);
     
 ?>
 <!DOCTYPE html>
@@ -23,7 +19,7 @@ and open the template in the editor.
     <head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>Admin - Lista de imagens</title>
+		<title>Admin - Update Imagem</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +34,7 @@ and open the template in the editor.
         <div class="container">
             <a class="navbar-brand" style="margin-left: -108px;">Administrador</a>
             <a class="navbar-brand" href="admin.php">Início</a>
-            <a class="navbar-brand" href="../index.php" >Ir para site</a>
+            <a class="navbar-brand" href="../index.php">Ir para site</a>
         </div>
    
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -53,22 +49,21 @@ and open the template in the editor.
     </div>    
 
          <div class="container">
-        	<div class="row well col-lg-4">
-	        	<ul>
-		            <?php foreach ($rows as $row) {
-		            ?>
-               <li style="list-style-type:none">
-		            <?php 
-                      echo '<img width="50%" height="50%" src="../'.$row['img_arquivo'].'">
-                      <a href="updateimagem.php?id='.$row['img_id'].'">Editar</a>
-                      <a href="deleteimagem.php?id='.$row['img_id'].'">Excluir</a>
-                      </li><br>
-                      ';
-                    }
-                 ?>
-	            </ul>
-       		 </div>
+        <div class="row well col-lg-4">
+        <form class="form col-md-12 center-block" enctype="multipart/form-data" action="delimagem.php" method="POST">
+               
+              <?php 
+              	 echo '<img width="50%" height="50%" src="../'.$row['img_arquivo'].'"> <br>'	
+               ?>
+               
+                
+                <input type="hidden" name="valor" id="valor" value="<?php echo $row['img_arquivo']; ?>">
+                <input type="hidden" name="img_id" id="id" value="<?php echo $row['img_id']; ?>">
+                <br/>
+                <button class="btn btn-primary" type="submit">Deletar</button>            
+            </form>
         </div>
+            </div>
         
         <!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>

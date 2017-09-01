@@ -18,7 +18,7 @@ function sendAndSave($nome, $email, $message){
 
 	$to      = 'laila.orsayferreira@gmail.com';
 	$subject = 'Contato About Lipsum';
-	$headers = 'From: lipsum@contato.com' . "\r\n" .'Reply-To: lipsum@contato.com' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+	$headers = 'From: laila.orsayferreira@gmail.com' . "\r\n" .'Reply-To: laila.orsayferreira@gmail.com' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
 
 	mail($to, $subject, $content, $headers);
 }
